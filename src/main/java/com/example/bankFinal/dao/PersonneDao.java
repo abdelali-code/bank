@@ -88,4 +88,28 @@ public class PersonneDao {
             connection.commit();
         }
     }
+
+    /** search for a comptes */
+    public List<Personne> chercher(String pattern) throws SQLException, ClassNotFoundException {
+        List<Personne> personnes = new ArrayList<>();
+        String query = "SELECT * FROM personne, compte WHERE compte.id=personne.compteid and nom LIKE ?";
+
+        try (Connection connection = Dbconn.getConnection();
+            PreparedStatement preparedStatement = connection.prepareStatement(query)
+        ) {
+            preparedStatement.setString(1, "%"+pattern+"%");
+            resultSet = preparedStatement.executeQuery();
+            while (resultSet.next()) {
+                //Personne(int id, double solde, String numero, String nom, String prenom)
+                 personnes.add(new Personne(
+                        resultSet.getInt("id"),
+                        resultSet.getDouble("solde"),
+                        resultSet.getString("numero"),
+                        resultSet.getString("nom"),
+                        resultSet.getString("prenom")
+                ));
+            }
+        }
+        return personnes;
+    }
 }

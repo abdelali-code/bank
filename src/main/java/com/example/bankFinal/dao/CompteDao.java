@@ -3,6 +3,8 @@ package com.example.bankFinal.dao;
 import com.example.bankFinal.DbConnection.Dbconn;
 import com.example.bankFinal.models.Compte;
 import java.sql.*;
+import java.util.ArrayList;
+import java.util.List;
 
 public class CompteDao {
     /** ajouter compte */
@@ -57,13 +59,4 @@ public class CompteDao {
         throw new SQLException("cant'modifier compte");
     }
 
-    /** modifier compte */
-//    public void supprimer(int id) throws SQLException, ClassNotFoundException {
-//        String query = "DELETE FROM compte WHERE id=?";
-//        try (   Connection connection = Dbconn.getConnection();
-//                PreparedStatement preparedStatement = connection.prepareStatement(query)){
-//            preparedStatement.setInt(1, id);
-//            preparedStatement.executeUpdate();
-//        }
-//    }
 }

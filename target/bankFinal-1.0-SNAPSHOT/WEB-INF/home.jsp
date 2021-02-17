@@ -27,7 +27,6 @@
             <table class="table">
                 <thead>
                 <tr>
-                    <th scope="col">id</th>
                     <th scope="col">name</th>
                     <th scope="col">prenom</th>
                     <th scope="col">solde</th>
@@ -40,9 +39,6 @@
                 <tbody>
                 <% for (Entreprise entreprise: entreprises) {%>
                     <tr>
-                            <td>
-                                <%= entreprise.getId()%>
-                            </td>
                             <td>
                                 <%= entreprise.getNom()%>
                             </td>
@@ -71,9 +67,6 @@
                 <% } %>
                     <% for (Personne personne: personnes) {%>
                     <tr>
-                        <td>
-                            <%= personne.getId()%>
-                        </td>
                         <td>
                             <%= personne.getNom()%>
                         </td>

@@ -8,6 +8,11 @@ public class Entreprise extends Compte{
         super(compteId, solde, numero);
         this.nom = nom;
     }
+    public Entreprise(int compteId, String nom, double solde) {
+        //int id, double solde, String numero)
+        super(compteId, solde);
+        this.nom = nom;
+    }
 
     public Entreprise( String nom, String numero, double solde) {
         super(solde, numero);

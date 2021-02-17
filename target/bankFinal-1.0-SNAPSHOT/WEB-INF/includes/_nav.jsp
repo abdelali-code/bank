@@ -13,8 +13,8 @@
                     <a class="nav-link active" aria-current="page" href="<%= request.getContextPath()%>/ajouter_entreprise">ajouter entreprise</a>
                 </li>
             </ul>
-            <form class="d-flex">
-                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+            <form class="d-flex" method="get" action="chercher">
+                <input class="form-control me-2" name="q" type="search" placeholder="Search" aria-label="Search">
                 <button class="btn btn-outline-success" type="submit">Search</button>
             </form>
         </div>
